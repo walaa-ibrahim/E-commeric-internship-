@@ -1,0 +1,24 @@
+/*Poppins font*/
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../fonts/poppin/Poppins-Regular.eot');/* IE9 Compat Modes */
+    src: url('../../fonts/poppin/Poppins-Regular.eot') format('embedded-opentype'), /* IE6-IE8 */
+        url('../../fonts/poppin/Poppins-Regular.woff2') format('woff2'),/* Modern Browsers */
+        url('../../fonts/poppin/Poppins-Regular.woff') format('woff'),/* modern Browsers */
+        url('../../fonts/poppin/Poppins-Regular.ttf') format('truetype');/* Safari, Android, iOS */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+/*open-sans font*/
+@font-face{
+    font-family: 'open-sans';
+    src: url('../fonts/open-sans/OpenSans-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/open-sans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/open-sans/OpenSans-Regular.woff2') format('woff2'), /* Modern Browsers */
+        url('../fonts/open-sans/OpenSans-Regular.woff') format('woff'), /* modern Browsers */
+        url('../fonts/open-sans/OpenSans-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+        url('../fonts/open-sans/OpenSans-Regular.svg') format('svg'); /* Legacy iOS */
+}
+
+/*end font for ltr*/

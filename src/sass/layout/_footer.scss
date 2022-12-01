@@ -1,0 +1,117 @@
+@import '../mixin/breakpoints';
+@import '../fonts/fonts';
+@import '../variables/colors-var';
+@import '../variables/main-vars';
+.Newsletter{
+    margin: 20px 0;
+    .Newsletter__subscribe{
+        background-image: url('../../assets/imgs/Rectangle\ -1.png');
+        background-size: cover;
+        padding:60px 0;
+        font-family: $main-font;
+        text-align: center;
+        p{
+            @include smScreen{
+                font-size:17px;
+                padding: 0 10px;
+            }
+            color: $white-color;
+            font-size:22px;
+            text-align: center
+        }
+        .subscribe{
+            @include smScreen{
+                padding: 0 10px;
+            }
+            .sign-btn{
+               @include smScreen{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+footer{
+    margin-top:50px;
+    .main-footer{
+        font-size: 13px;
+        h4{
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        ul{
+            margin-top: 20px;
+            li{
+                padding:5px 0;
+                text-align:$dirc;
+                text-transform: capitalize;
+            }
+        }
+        .form-control{
+            padding: .64rem .75rem;
+            margin-#{$oop-dirc}:5px
+        }
+        .social-icons{
+            li{
+                padding:0 10px;
+                .icon-svg{
+                    width:16px;
+                    height: 20px;
+                    transition: all 0.2s;
+                    &.facebook:hover{
+                        fill: #0166E1;
+                    }
+                    &.twitter:hover{
+                        fill: #55ADED
+                    }
+                    &.linkedin:hover{
+                        fill: #0A66C2
+                    }
+                    &.insta:hover{
+                        fill: #DD1B3D; /* fallback for old browsers */
+                        fill: -webkit-linear-gradient(to right, #DD1B3D, #8d36d4); /* Chrome 10-25, Safari 5.1-6 */
+                        fill: linear-gradient(to right, #DD1B3D, #8d36d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    }
+                    &.youtube:hover{
+                        fill: #FF0000
+                    }
+                }
+            }
+        }
+        
+    }
+    .footer-links{
+        border-top: 1px solid #EBEBEB;
+        padding:15px 0;
+        font-size: 12px;
+        ul {
+            justify-content: space-between;
+            height: 100%;
+            li{
+                font-weight: 600;
+            }
+        }
+        .footer-img{
+            @include mdScreen{
+                text-align:$oop-dirc ;
+            }
+            @include mdScreen{
+                text-align:center ;
+            }
+            text-align: center;
+            img{
+                @include mdScreen{
+                    margin-#{$oop-dirc}:0px;
+                }
+                margin-#{$oop-dirc}:20px;
+            }
+        }
+        
+        p{
+
+            color: #AEAEAE;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+
+body{
+    font-family: $main-font, $sub-font;
+}
+a{
+    color: $main-color;
+    text-decoration: none;
+    &:hover{
+        color: $main-color;
+    }
+}
+
+%reset-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.dummy-text{
+    font-family: 'Poppins';
+    font-size: 13px;
+    color: $sub-color;
+}
+
+ ul{
+     list-style: none;
+     padding-#{$dirc}: 0;
+ }
+ .back{
+    font-size: 14px;
+    font-weight:600;
+    position: relative;
+    a{
+        .icon-svg{
+            width:1rem;
+            position: relative;
+            #{$oop-dirc}:10px;
+            transition: all 0.3s;
+        }
+        &:hover{
+            .icon-svg{
+            #{$oop-dirc}:15px;
+            fill: $yellow-color;
+            }
+            
+        }
+
+    }
+}
+ 
+.or{
+    text-align: center;
+    color: #D8D8D8;
+    p{
+        position: relative;
+        &::after, &::before{
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 40%;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #D8D8D8;
+        }
+        &::after{
+            #{$dirc}: 0;
+        }
+        &::before{
+            #{$oop-dirc}: 0;
+        }
+    }
+   
+}
+.modal{
+    z-index: 99999;
+}
+.modal-content{
+    top: 50px;
+}
+.icon-svg{
+    width:20px;
+    height: 20px;
+}

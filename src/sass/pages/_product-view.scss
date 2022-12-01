@@ -1,0 +1,252 @@
+@import '../mixin/breakpoints';
+@import '../fonts/fonts';
+@import '../variables/colors-var';
+@import '../variables/main-vars';
+@import '../components/button';
+.swiper-pagination-bullet{
+    width: 20px;
+    height: 2px;
+    border-radius: 0;
+}
+.swiper-slide .swiper-slide-duplicate-active img{
+    width: 100%;
+}
+.product-view{
+    @include mdScreen{
+        margin-top: 10px;
+    }
+  margin-top: 64px;
+  overflow: hidden;
+    .breadcrumb{
+        .icon-svg{
+            height: 12px;
+            fill:black;
+        }
+    }
+    .product-view__link-page{
+        @include mdScreen{
+            display: none;
+        }
+        font-size:12px;
+        h4{
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+    .product-view__imgs{
+        .img-viewer{
+            width: 100%;
+        }
+        .product-view__imgs-viewer{
+            #lightboxContainer{
+                @include mdScreen{
+                    display: none;
+                }
+                height: 100%;
+                img{
+                   width: 100%;
+                }
+    
+            }
+            .piclist{
+                @include mdScreen{
+                    display: none;
+                }
+                img{
+                    cursor: pointer;
+                    width: 100%;
+                }
+            }
+            
+        }
+        .product-view__sale{
+            @include smScreen{
+                display: none;
+            }
+            display: inline-block;
+            padding:0.4rem .73rem;
+            color: $white-color;
+            background-color: #FF0000;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .product-view__prod-name{
+            @include smScreen{
+                font-size: 25px;
+            }
+            font-size: 30px;
+        }
+        .product-view__discount{
+            @include smScreen{
+                font-size: 18px;
+            }
+            font-size: 30px;
+            .disc{
+                color: red;
+            }
+            .price{
+                text-decoration: line-through;
+                color: $sub-color;
+            }
+            .brand-name{
+                @include smScreen {
+                    font-size: 11px;
+                    padding-top: 4px;
+                }
+                font-size: 13px;
+                text-align: right;
+                padding-top: 10px;
+                text-transform: uppercase;
+            }
+        }
+        .colors
+        {
+            font-size: 13px;
+            .colors-field{
+                display: flex;
+                li{
+                    width: 25px;
+                    height: 25px;
+                    margin-#{$oop-dirc}:10px;
+                    border: 1px solid $main-color;
+                    cursor: pointer;
+                    p{
+                        width: 15px;
+                        height: 15px;
+                        margin: 4px;
+                    }
+                }
+            }
+        }
+        .size{
+            font-size: 13px;
+            margin: 30px 0;
+            p{
+                span{
+                    font-weight: 600;
+                    margin-#{$dirc}:35px
+                }
+            }
+            .form-select{
+                width: auto;
+                position: relative;
+                padding-top: .87rem;
+                padding-#{$oop-dirc}:4.93rem;
+                padding-bottom: 0.87rem;
+                padding-#{$dirc}: 1.3rem;
+                background-image: url('../../assets/imgs/SVG/angle-right.svg');
+                border-radius: 50px;
+                font-size: 13px;
+                text-transform: uppercase;
+                @if $dirc == 'right' {
+                    background-image: url('../../assets/imgs/SVG/angle-left.svg');
+                }
+                &::after{
+                    content: '<svg><use xLink:href="../../assets/imgs/symbol-defs.svg#angle-right.svg"></use><svg>';
+                    position: absolute;
+                    
+                }
+            }
+        }
+        .quantity{
+            font-size: 13px;
+            .btn-num{
+                @include smScreen{
+                    width: 100px;
+                    padding: none 0;
+                }
+                display: flex;
+                justify-content: space-around;
+                width: 130px;
+                padding: 0.8rem 0;
+                background-color: $white-color;
+                border: 1px solid #D8D8D8;
+                border-radius: 40px;
+                .min-num{
+                    color: $sub-color;
+                }
+            }
+            .add.sign-btn{
+                @include smScreen{
+                    font-size: 12px;
+                    padding:0.735rem 1.424rem;
+                }
+                padding:0.935rem 3.624rem;
+                margin:0 15px
+            }
+            .wishlis{
+                width:49px;
+                height: 49px;
+                line-height: 49px;
+                border: 1px solid $sub-color;
+                border-radius: 50%;
+                text-align: center;
+                transition: all 0.1s;
+                cursor: pointer;
+                &.wish-act{
+                    border-color:red;
+                    .icon-svg{
+                        fill: red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.des-revies{
+    @include mdScreen{
+        width: 90%;
+    }
+    width:70%;
+    margin: 60px auto;
+    font-size: 14px;
+    h3{
+        font-size: 16px;
+        font-weight: 600;
+        margin: 20px 0;
+    }
+    .nav{
+        margin-bottom: 50px;
+        justify-content: center;
+        .nav-link{
+            @include mdScreen{
+                margin-#{$dirc}:20px;
+                padding:.78rem 2.871rem;
+            }
+            @include smScreen{
+                padding:.78rem .71rem ;
+            }
+            font-size: 13px;
+            margin-#{$dirc}:40px;
+            padding:.838rem 3.31rem;
+            &:hover{
+                border-color: transparent;
+            }
+            &.active{
+                @include mdScreen{
+                    padding:.68rem 1.271rem
+                }
+                padding:.838rem 3.31rem;
+                border: 1px solid $yellow-color;
+                border-radius: 40px;
+            }
+        }
+        
+        &.nav-tabs{
+            border: none;
+        }
+    }
+    .tab-content{
+        .svg-imgs{
+            width: 20px;
+            height: 45px;
+        }
+        .tab-pane{
+            p{
+                padding-bottom: 0;
+            }
+        }
+     }
+}

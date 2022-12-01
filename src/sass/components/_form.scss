@@ -1,0 +1,23 @@
+.alert{
+    display: none;
+    border-radius: 40px;
+    padding: 0.938rem  .75rem;
+}
+.subscribe{
+    display: flex;
+    justify-content: center;
+     .form-control{
+         @extend %button;
+         padding: .699rem .75rem;
+         &::placeholder{
+             @extend %placeholder;
+         }
+         &:focus{
+             @extend %btn
+         }
+     }
+     .sign-btn{
+         padding:.9rem 1.58rem;
+     }
+ }
+ 

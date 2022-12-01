@@ -1,0 +1,69 @@
+@import '../mixin/breakpoints';
+@import '../fonts/fonts';
+@import '../variables/colors-var';
+@import '../variables/main-vars';
+@import '../components/button';
+@import '../components/form';
+.sign-up{
+    padding: 20px 0;
+    .sign-up__content{
+        @include mdScreen{
+            width: 70%;
+        }
+        @include smScreen{
+            width:100%;
+        }
+        width:50%;
+        margin:50px auto;
+        h3{
+            @include mdScreen{
+                font-size: 17px;
+            }
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        .dummy-text{
+            @include xlgScreen{
+                padding:15px 95px
+            }
+            @include smScreen{
+                padding:15px 35px
+            }
+            text-align: justify;
+            padding: 15px 133px;
+        }
+    }
+    .form-control{
+        @extend %button;
+        &::placeholder{
+            @extend %placeholder;
+        }
+        &:focus{
+            @extend %btn
+        }
+    }
+    .check-field{
+        font-size: 13px;
+        .form-check-input:checked {
+            background-color: $yellow-color;
+            border-color: $yellow-color;
+            box-shadow:none;
+        }
+    }
+    .sign-btn{
+       display: block;
+       width: 100%;
+    }
+    .sign-up__ready{
+        text-align: center;
+        font-size: 13px;
+        color: $main-color;
+        padding-top: 20px;
+    }
+}
+%placeholder{
+    font-size: 13px;
+    color: #808080;
+    padding-#{$dirc}: 20px;
+}

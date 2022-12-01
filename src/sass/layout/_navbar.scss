@@ -1,0 +1,338 @@
+@import '../variables/colors-var';
+@import '../components/button';
+@import '../mixin/breakpoints';
+@import '../variables/main-vars';
+/*******************  Navbar *********************/
+.fixed-menu {
+  position: relative; 
+  top: 0;
+  z-index: 20000;
+  width: 100%;
+  padding: 15px 0;
+  transition: all .5s ease;
+  &.nav-style{
+    position: fixed;
+    a, .nav_menu-item { color: $white-color !important}
+    .icon-svg {fill: white}
+  
+  }
+  &.scrolled {
+    position: fixed;
+    background-color: white;
+    box-shadow: 0px 2px 5px #00000073;
+    a, .nav_menu-item { color: $main-color !important}
+    .icon-svg {fill: black !important}
+  }
+}
+
+.nav_logo {
+  a { 
+    text-decoration: none;
+    color: $main-color;
+    .icon-svg { 
+      margin-#{$oop-dirc}: 10px;
+      width: 20px;
+      height: 20px;
+      fill: $main-color;
+    }
+    span{
+      color: $yellow-color
+    }
+  }
+}
+
+.nav_menu {
+  @extend %reset-ul;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  transition: all .5s ease;
+  @include mdScreen{
+    position: absolute;
+    top: 100%; #{$dirc}: -100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: $white-color;
+    border-radius: 5px;
+    &.active { #{$dirc}: 0 }
+  }
+}
+
+.nav_menu-item {
+  margin: 0 30px;
+  cursor: pointer;
+  color: $main-color;
+  transition: all .5s ease;
+  &::after {
+    content: '';
+    display: block;
+    height: 2px; width: 0;
+    background-color: $yellow-color;
+    transition: all .3s ease;
+  }
+  &:hover { 
+    &::after {
+      width: 100%;
+    }
+  }
+  @include mdScreen{
+    padding: 5px 0;
+    width: 100%;
+    color: $main-color;
+    //font-weight: bold;
+    &:hover {
+      background-color: $yellow-color;
+      &::after {
+        width: 0;
+      }
+    }
+  }
+}
+.nav_submenus {
+  position: absolute;
+  top: 100%; #{$dirc}: 0;
+  width: 100%; max-height: 0;
+  overflow: hidden;
+  color: $main-color;
+  background-color: rgb(255, 255, 255);
+  transition: all .5s ease;
+  @include mdScreen {
+    position: initial
+  }
+  &.active { max-height: 100vh }
+}
+.nav_submenu1 {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  padding:50px;
+  background-color: $white-color;
+  transition: all .5s ease;
+  @include mdScreen{
+    position: absolute;
+    top: 0; #{$dirc}: -100%;
+    width: 100%;
+    padding: 30px 0;
+    flex-direction: column;
+    align-items: center;
+    &.active { #{$dirc}: 0}
+  }
+}
+.nav_submenu1-item {
+  @include mdScreen {
+    width: 100%;
+  }
+}
+.nav_submenu1-name {
+  margin-bottom: 20px;
+  @include mdScreen {
+    margin: 0;
+    padding: 10px 0;
+    width: 100%;
+    &:hover {
+      background-color: $yellow-color;
+    }
+  }
+}
+.nav_submenu2 {
+  @extend %reset-ul;
+  background-color: rgb(255, 255, 255);
+  transition: all .5s ease;
+  @include mdScreen{
+    position: absolute;
+    top: 0; #{$dirc}: -100%;
+    width: 100%;
+    padding: 30px 0;
+    &.active { #{$dirc}: 0}
+  }
+}
+.nav_submenu2-item {
+  margin-bottom: 10px;
+  @include mdScreen {
+    margin: 0;
+    padding: 10px 0;
+    transition: all .5s ease;
+    &:hover {
+      background-color: $yellow-color
+    }
+  }
+}
+.nav_tools {
+  @extend %reset-ul;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+.nav_tools-item {
+  padding: 5px;
+  margin: 0 5%;
+  cursor: pointer;
+  color: $white-color;
+  transition: all .3s ease;
+  .icon-svg {
+    width: 20px;
+    height: 20px;
+    fill: $main-color;
+    transition: all .3s ease;
+    &:hover { fill: $yellow-color}
+    &.active { fill: $yellow-color;}
+  }
+  &.active {
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.171);
+  }
+}
+.menu-toggler {
+  display: none;
+    @include mdScreen {
+      display: flex;
+      align-items: center;
+  }
+}
+.nav_tools-item.signing { position: relative;}
+.signing_menu {
+  display: none;
+  position: absolute;
+  top: 100%; #{$oop-dirc}: 0;
+  width: 200px;
+  padding: 10px;
+  background-color: $white-color;
+  animation: slidingDown .5s ease;
+  &.active { display: block;}
+}
+
+.signing_item {
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+  padding: 5px;
+  border: none;
+  background-color: $yellow-color;
+  box-shadow: 0 3px 5px #80808082;
+  transition: all .5s ease;
+  cursor: pointer;
+  &::after {
+    position: absolute;
+    bottom: 0; left: 0;
+    content: '';
+    width: 0; height: 0;
+    background-color: #db8c0e4d;
+    transition: all .3s ease;
+  }
+  &:hover {
+    color: $white-color;
+    &::after {
+      width: 100%; height: 100%;
+    }
+  }
+}
+.menu-closer {
+  display: none;
+  transition: all .3s ease;
+  @include mdScreen {
+    display: block;
+    position: absolute;
+    #{$oop-dirc}: 15px; top: 5px;
+    color: rgb(100, 100, 100);
+  }
+  .icon-svg {
+    width: 20px;
+    height: 20px;
+  }
+  &:hover {
+    transform: rotate(90deg);
+    color: $main-color;
+  }
+}
+@keyframes slidingDown {
+  0% { top: 50%; opacity: 0;}
+  100% { top: 100%; opacity: 1; }
+}
+/************************************************************/
+/**Model Box**/
+.modal-header{
+  border-bottom: 0;
+}
+.modal-body{
+  .sign-up{
+    @include smScreen{
+      padding: 10px 0;
+    }
+    padding: 10px;
+    .sign-up__content{
+      @include smScreen{
+        width: 100%;
+      }
+      width:80%;
+      margin:10px auto;
+      .sign-up__content-header{
+        margin-bottom: 40px;
+        .dummy-text{
+          @include smScreen{
+            padding:9px 19px;
+          }
+          &.special-text{
+            @include smScreen{
+              padding:9px 10px;
+            }
+          }
+          padding:9px 29px;
+          text-align: center;
+        }
+      }
+      .form-control{
+        @include smScreen{
+          padding: .738rem .75rem;
+        }
+      }
+      .sign-btn{
+        @include smScreen{
+          padding: 0.95rem 0;
+
+        }
+      }
+      .header-model{
+        @include smScreen{
+          font-size: 16px;
+        }
+        font-size: 20px;
+      }
+      .log-social__facebook{
+        margin: 5px 0;
+        .icon-svg{
+          fill: $white-color;
+        }
+        span{
+          padding-#{$dirc}: 10px;
+        }
+         
+      }
+      .log-social__gmail{
+        margin: 5px 0;
+        span{
+          padding-#{$dirc}: 10px;
+        }
+      } 
+    }
+    .check-field{
+     @media (max-width:374.99px) {
+       flex-direction: column;
+     }
+     .forget-pass{
+      @media (max-width:374.99px) {
+        display: inline-block;
+        padding-#{$dirc}:12px;
+        padding-top: 4px;
+        font-weight: 600;
+        &:hover{
+          color: $yellow-color;
+        }
+      }
+     cursor: pointer;
+    }
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

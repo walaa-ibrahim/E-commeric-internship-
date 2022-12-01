@@ -1,0 +1,395 @@
+@import '../mixin/breakpoints';
+@import '../fonts/fonts';
+@import '../variables/colors-var';
+@import '../variables/main-vars';
+@import '../components/button';
+/********************* Shopping Cart ************************/
+.form-control, .form-select{
+  @extend %button;
+  &::placeholder{
+      @extend %placeholder;
+  }
+  &:focus{
+      @extend %btn
+  }
+}
+.shopping {
+    padding: 50px 0;
+  }
+  
+  .cart_top {
+    margin-bottom: 50px;
+  }
+  
+  .cart_header {
+    margin: 0;
+    @include smScreen {
+      font-size: 15px;
+    }
+  }
+  
+  .cart_stages {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cart_stages-icon {
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.active {
+      background-color: $yellow-color;
+      .icon-svg {
+        fill: white;
+      }
+    }
+    &.done {
+      border: 1px solid $yellow-color;
+      .icon-svg {
+        fill: $yellow-color;
+      }
+    }
+    .icon-svg {
+      width: 25px;
+      height: 25px;
+      fill: #c1c1c1;
+      @include smScreen {
+        width: 15px;
+        height: 15px;
+      }
+    }
+    @include smScreen {
+      width: 25px;
+      height: 25px;
+      padding: 3px;
+    }
+  }
+  
+  .cart_stages-line {
+    width: 25%;
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.438);
+  }
+  
+  .shopping_products {
+    margin-bottom: 70px;
+    table {
+      thead tr {
+        color: #c1c1c1;
+        font-size: 0.9rem;
+        th:first-of-type {
+          width: 35%;
+        }
+      }
+      tbody tr {
+        vertical-align: middle;
+        // text-align: center;
+      }
+    }
+  }
+  
+  .product_info {
+    display: flex;
+    align-items: center;
+    .product_img {
+      margin-#{$oop-dirc}: 20px;
+      margin-bottom: 10px;
+    }
+    .product_id {
+      margin: 0;
+      color: #c1c1c1;
+    }
+    @include smScreen {
+      display: block;
+      text-align: center;
+    }
+  }
+  
+  .product_counter {
+    width: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #c1c1c1;
+    border-radius: 20px;
+    .product_minus {
+      color: #c1c1c1;
+    }
+    .product_minus,
+    .product_plus {
+      cursor: pointer;
+    }
+    @include smScreen {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  .product_remove {
+    cursor: pointer;
+    .icon-svg {
+      width: 20px;
+      height: 20px;
+      &:hover {
+        fill: $yellow-color;
+      }
+    }
+  }
+  
+  .shopping_promo {
+    position: relative;
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 25px;
+      border: 1px solid #c1c1c1;
+      outline: none;
+    }
+    .icon-svg {
+      position: absolute;
+      #{$oop-dirc}: 20px;
+      top: 17px;
+      width: 15px;
+      height: 15px;
+      fill: gray;
+      cursor: pointer;
+    }
+  }
+  
+  .shopping_total {
+    @include mdScreen {
+      text-align: center;
+    }
+  }
+  
+  .cart_options {
+    text-align: right;
+    button {
+      padding: 15px 20px;
+      margin-bottom: 10px;
+      border: 1px solid rgb(211, 211, 211);
+      border-radius: 30px;
+      background-color: transparent;
+      font-size: 0.9rem;
+      font-weight: bold;
+      box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.219);
+      &:nth-child(2) {
+        margin-#{$dirc}: 20px;
+        border: none;
+        background-color: $yellow-color;
+      }
+      &:hover {
+        animation: bouncing 0.5s linear infinite alternate;
+      }
+      @include smScreen {
+        padding: 10px;
+        font-size: 0.6rem;
+      }
+    }
+    @include largScreen {
+      text-align: center;
+    }
+  }
+  
+  /************************************************************/
+  /*********************** Shipping ***************************/
+  .shipping {
+    padding: 50px 0;
+  }
+  
+  .shipping_body {
+    margin-bottom: 50px;
+  }
+  
+  .shipping_form {
+    .form-label {
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+    .form-control,
+    .form-select {
+      padding: 10px;
+      font-size: 0.8rem;
+      border-radius: 30px !important;
+    }
+  }
+  
+  .shipping_method {
+    height: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #80808036;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .shipping_img {
+    margin-bottom: 30px;
+  }
+  
+  .shipping_price {
+    margin-bottom: 5px;
+    color: gray;
+  }
+  
+  .shipping_pay {
+    font-size: 0.8rem;
+    text-align: center;
+    color: rgb(192, 192, 192);
+  }
+  
+  .shipping_bottom {
+    .icon-svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  .back button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  /************************************************************/
+  /*********************** Summary ***************************/
+  
+  .summary {
+    padding: 50px 0;
+  }
+  
+  .summary_header {
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  .summary_payment {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .summary_payment-method {
+    width: 30%;
+    height: 55px;
+    margin: 10px 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 15px;
+  }
+  
+  .delivery_method {
+    @extend .shipping_method;
+    position: relative;
+    height: 200px;
+    border-color: $yellow-color;
+  }
+  
+  .delivery_img {
+    @extend .shipping_img;
+  }
+  
+  .delivery_price {
+    @extend .shipping_price;
+  }
+  
+  .delivery_pay {
+    @extend .shipping_pay;
+  }
+  
+  .delivery_btn {
+    position: absolute;
+    bottom: -20px;
+    width: 80%;
+    padding: 10px 0;
+    border: none;
+    background-color: $yellow-color;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .summary_address-details {
+    margin-bottom: 50px;
+  }
+  
+  .summary_address-btn {
+    padding: 15px 20px;
+    border: 1px solid rgb(218, 218, 218);
+    background-color: transparent;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .summary_product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .product_details {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    @include mdScreen {
+      width: 20%;
+      display: block;
+    }
+  }
+  
+  .summary_cost {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 20px;
+    border: none;
+    background-color: #f1f1f1;
+    border-radius: 30px;
+    font-size: 0.8rem;
+  }
+  
+  .summary_bottom {
+    .icon-svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  .summary_discount {
+    .icon-svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  }
+  
+  @keyframes slidingDown {
+    0% {
+      top: 50%;
+      opacity: 0;
+    }
+    100% {
+      top: 100%;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes bouncing {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
